@@ -5,12 +5,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.gitopsdemo</groupId>
-	<artifactId>gitopsdemocalcproject</artifactId>
+	<groupId>Personal</groupId>
+	<artifactId>Calculator</artifactId>
 	<version>0.0.2-SNAPSHOT</version>
 	<packaging>war</packaging>
 
-	<name>gitopsdemocalcproject</name>
+	<name>Calculator</name>
 	<!-- FIXME change it to the project's website -->
 	<url>http://www.example.com</url>
 
@@ -20,9 +20,10 @@
 		<maven.compiler.target>1.7</maven.compiler.target>
 		
 	
-  <sonar.projectKey>RRimu_gitopsdemocalcproject</sonar.projectKey>
-  <sonar.organization>gademo</sonar.organization>
-  <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+  <sonar.projectKey>CI_1</sonar.projectKey>
+  <sonar.host.url>https://localhost:9000</sonar.host.url>
+  <sonar.login>admin</sonar.login>
+  <sonar.password>admin1</sonar.password>
 
 	</properties>
 
@@ -65,6 +66,10 @@
 					</archive>
 				</configuration>
 			</plugin>
+			<plugin>
+			<groupId>org.sonarscanner.scanner.maven</groupId>
+			<artifactId>sonar-maven-plugin</artifactId>
+			<version>3.6.0.1398</version></plugin>
 
 			<plugin>
 				<groupId>org.jacoco</groupId>
@@ -120,9 +125,9 @@
 	</build>
 	<distributionManagement>
 		<repository>
-			<id>github</id>
-			<name>GitHub MBB Apache Maven Packages</name>
-			<url>https://maven.pkg.github.com/RRimu/gitopsdemocalcproject</url>
+			<id>artifactory</id>
+			<name>Calc_CI_build</name>
+			<url>https://localhost:8081/artifactory/Calc_CI_build</url>
 		</repository>
 	</distributionManagement>
 </project>
